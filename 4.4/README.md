@@ -21,12 +21,13 @@
   - [Assorted use cases documented in issues](#assorted-use-cases-documented-in-issues)
 
 ---
+## Gerami Important Notes
 
-## Step-1: Build Docker Image
+### Step-1: Build Docker Image
 Use the following command for Docker Image build:
 
 docker build --pull -t MySpace/nominatim:TAG .
-## Step-2: Run the Container with Built Image
+### Step-2: Run the Container with Built Image
 Using nominatim-docker/4.4/contrib/docker-compose.yml
 Execute Nominatim Docker with following command: 
 
