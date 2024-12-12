@@ -1,19 +1,27 @@
-version: "3"
-
 services:
     nominatim:
         container_name: nominatim
+        # Build Image, then specify it below:
         image: mediagis/nominatim:4.4
+        volumes:
+            - ./local-pbf-directory:/nominatrim/data
+            - ./local_postgres-data-directory:/var/lib/postgresql/14/main
         ports:
             - "8080:8080"
         environment:
-            # see https://github.com/mediagis/nominatim-docker/tree/master/4.4#configuration for more options
-            PBF_URL: https://download.geofabrik.de/europe/monaco-latest.osm.pbf
-            REPLICATION_URL: https://download.geofabrik.de/europe/monaco-updates/
-            NOMINATIM_PASSWORD: very_secure_password
-        volumes:
-            - nominatim-data:/var/lib/postgresql/14/main
+            # Specify PBF_URL or PBF_PATH to proceed
+            - PBF_URL=https://download.geofabrik.de/asia/iran-latest.osm.pbf
+            - REPLICATION_URL=https://download.geofabrik.de/asia/iran-updates/
+            - PBF_PATH: 
+            - NOMINATIM_PASSWORD=very_secure_password
+            - POSTGRES_PASSWORD=very_secure_password
         shm_size: 1gb
+        restart: always
 
-volumes:
-    nominatim-data:
+  postgis:
+    image: postgis/postgis:14-3.3
+    environment:
+      - POSTGIS_PASSWORD=very_secure_password
+    volumes:
+      - ./localpostgis-data-directory:/var/lib/postgresql/data
+    restart: always
