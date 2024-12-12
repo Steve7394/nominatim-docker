@@ -1,7 +1,9 @@
 # Nominatim Docker (Nominatim version 4.4)
 
 ## Table of contents
-
+  - [Gerami Important Notes][#gerami-notes]
+    - [Step-1: Build Docker Image][#step1]
+    - [Step-2: Run the Container with Built Image][#step2]
   - [Automatic import](#automatic-import)
   - [Configuration](#configuration)
     - [General Parameters](#general-parameters)
@@ -19,6 +21,16 @@
   - [Assorted use cases documented in issues](#assorted-use-cases-documented-in-issues)
 
 ---
+
+## Step-1: Build Docker Image
+Use the following command for Docker Image build:
+
+docker build --pull -t MySpace/nominatim:TAG .
+## Step-2: Run the Container with Built Image
+Using nominatim-docker/4.4/contrib/docker-compose.yml
+Execute Nominatim Docker with following command: 
+
+docker compose up -d
 
 ## Automatic import
 
