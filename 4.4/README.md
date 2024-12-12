@@ -1,9 +1,9 @@
 # Nominatim Docker (Nominatim version 4.4)
 
 ## Table of contents
-  - [Gerami Important Notes][#gerami-notes]
-    - [Step-1: Build Docker Image][#step1]
-    - [Step-2: Run the Container with Built Image][#step2]
+  - [Gerami Important Notes](#gerami-notes)
+    - [Step-1: Build Docker Image](#step1)
+    - [Step-2: Run the Container with Built Image](#step2)
   - [Automatic import](#automatic-import)
   - [Configuration](#configuration)
     - [General Parameters](#general-parameters)
